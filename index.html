@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoxAlign Demopage</title>
+  <title>VoxSafeBench Demopage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <div class="brand">
-        <span class="brand-mark">VoxAlign</span>
+        <span class="brand-mark">VoxSafeBench</span>
         <span class="brand-subtitle">Demopage for representative audio and response samples</span>
       </div>
       <nav class="nav-links" aria-label="Primary">
@@ -27,15 +27,15 @@
   <main>
     <section class="section hero" id="home">
       <div class="hero-shell">
-        <h1 class="hero-title">VoxAlign</h1>
-        <p class="hero-tagline">Not Just What You Say, but How You Say It</p>
+        <h1 class="hero-title">VoxSafeBench</h1>
+        <p class="hero-tagline">Not Just <em>What</em> Is Said, but <em>Who</em>, <em>How</em>, and <em>Where</em></p>
 
         <div class="hero-links">
-          <a href="https://github.com/JensenYX/VoxAlign" target="_blank" rel="noopener" class="hero-link-btn">
+          <a href="https://github.com/AmphionTeam/VoxSafeBench.git" target="_blank" rel="noopener" class="hero-link-btn">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             <span>Code</span>
           </a>
-          <a href="https://huggingface.co/datasets/YuxiangW/VoxAlign" target="_blank" rel="noopener" class="hero-link-btn">
+          <a href="https://huggingface.co/datasets/YuxiangW/VoxSafeBench" target="_blank" rel="noopener" class="hero-link-btn">
             <img src="huggingface-color.png" alt="Hugging Face" class="hero-link-icon">
             <span>Dataset</span>
           </a>
@@ -49,7 +49,7 @@
           <h2 class="abstract-heading">Abstract</h2>
           <div class="abstract-body">
             <p>
-              As speech language models (SLMs) become a primary interface for seeking advice and delegating tasks, their alignment cannot be assessed from transcripts alone. Unlike text, speech carries paralinguistic and environmental cues that can change whether a response is safe, fair, or privacy-preserving. Yet prior benchmarks largely emphasize audio understanding or study individual risks in isolation, without distinguishing between content that is inherently harmful and content that only becomes problematic due to how it is spoken. We introduce VoxAlign, a benchmark for <em>social alignment</em> in SLMs built around safety, fairness, and privacy. VoxAlign adopts a Two-Tier design: Tier&nbsp;1 evaluates content-centric risks with matched text and audio inputs, while Tier&nbsp;2 evaluates audio-conditioned risks in which the transcript is benign but the correct response depends on who is speaking, how they speak, or where they speak. Across 22 tasks and bilingual evaluations, we find that safeguards that appear stronger on transcripts often weaken in speech. Models are markedly less reliable when fairness-relevant contrasts move from explicit text into voice, and privacy protections weaken when contextual cues arrive acoustically. Overall, the results are consistent with current SLMs often knowing the relevant norm in text but not consistently applying it when the deciding cue must be grounded in speech.
+              As speech language models (SLMs) transition from personal devices into shared, multi-user environments, their responses must account for far more than the words alone. Who is speaking, how they sound, and where the conversation takes place can each turn an otherwise benign request into one that is unsafe, unfair, or privacy-violating. Existing benchmarks, however, largely focus on basic audio comprehension, study individual risks in isolation, or conflate content that is inherently harmful with content that only becomes problematic due to its acoustic context. We introduce <strong>VoxSafeBench</strong>, among the first benchmarks to jointly evaluate <em>social alignment</em> in SLMs across three dimensions: safety, fairness, and privacy. VoxSafeBench adopts a Two-Tier design: Tier&nbsp;1 evaluates content-centric risks using matched text and audio inputs, while Tier&nbsp;2 targets audio-conditioned risks in which the transcript is benign but the appropriate response hinges on the speaker, paralinguistic cues, or the surrounding environment. To validate Tier&nbsp;2, we include intermediate perception probes and confirm that frontier SLMs can successfully detect these acoustic cues yet still fail to act on them appropriately. Across 22 tasks with bilingual coverage, we find that safeguards appearing robust on text often degrade in speech: safety awareness drops for speaker- and scene-conditioned risks, fairness erodes when demographic differences are conveyed vocally, and privacy protections falter when contextual cues arrive acoustically. Together, these results expose a pervasive <em>speech grounding gap</em>: current SLMs frequently recognize the relevant social norm in text but fail to apply it when the decisive cue must be grounded in speech.
             </p>
           </div>
         </div>
